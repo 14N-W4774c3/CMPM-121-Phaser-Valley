@@ -1,9 +1,10 @@
 // deno-lint-ignore-file
-class Win extends Phaser.Scene {
-    constructor() {
+export class Win extends Phaser.Scene {
+    days: number;
+    constructor(data: any) {
         super("winScene")
+        this.days = data.days;
     }
-
 
     create(){
         let textConfig = {
@@ -16,7 +17,7 @@ class Win extends Phaser.Scene {
             },
             fixedWidth: 0
         }
-        this.text = this.add.text(140, 200, 'Congratulations,  \nyou achieved the goal', textConfig)
-        this.stateText = this.add.text(120, 300, `You reach the goal in ${days} days`, textConfig)
+        this.add.text(140, 200, 'Congratulations,  \nyou achieved the goal', textConfig)
+        this.add.text(120, 300, `You reached the goal in ${this.days} days`, textConfig)
     }
 }

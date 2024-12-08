@@ -1,5 +1,5 @@
 // deno-lint-ignore-file
-class Load extends Phaser.Scene {
+export class Load extends Phaser.Scene {
   constructor() {
     super("loadScene");
   }
